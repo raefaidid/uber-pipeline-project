@@ -116,15 +116,6 @@ sudo pip3 install pandas
 
 2. After that, I deployed Airflow using docker-compose following the official documentation from [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
 
-```python 
-# Install Mage library
-sudo pip3 install mage-ai
-
-# Create new project
-mage start demo_project
-```
-
-
 
 3. Next, I conduct orchestration in Mage by accessing the external IP address through a new tab. The link format is: `http://<external IP address>:<port number>`.
 
