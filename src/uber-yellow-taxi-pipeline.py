@@ -636,7 +636,12 @@ def create_trips_fct_tbl(**context):
     fare_dim_json = context["ti"].xcom_pull(key="fare_dim_tbl")
     fare_dim = pd.read_json(fare_dim_json)
     
-    
+        # Convert date columns to datetime types
+    if "tpep_pickup_datetime" in df.columns:
+        df["tpep_pickup_datetime"] = pd.to_datetime(df.tpep_pickup_datetime)
+    if "tpep_dropoff_datetime" in df.columns:
+        df["tpep_dropoff_datetime"] = pd.to_datetime(df.tpep_dropoff_datetime)
+        
     df["tpep_pickup_datetime"] = df.tpep_pickup_datetime.astype(
         "string"
     )
