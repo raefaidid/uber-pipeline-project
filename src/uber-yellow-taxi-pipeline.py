@@ -644,6 +644,13 @@ def create_trips_fct_tbl(**context):
         "string"
     )
     
+    datetime_dim["tpep_pickup_datetime"] = datetime_dim.tpep_pickup_datetime.astype(
+        "string"
+    )
+    datetime_dim["tpep_dropoff_datetime"] = datetime_dim.tpep_dropoff_datetime.astype(
+        "string"
+    )
+    
     
     fct_table = df\
         .merge(vendor_dim[['vendor_id', 'VendorID']], how='left', on='VendorID')\
